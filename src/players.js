@@ -10,6 +10,10 @@ export class Player
   {
     return this.score = this.card1 +this.card2;
   }
+  hitScore(hit)
+  {
+   return this.score += hit;
+  }
   checkScore()
   {
     if (this.score<21)

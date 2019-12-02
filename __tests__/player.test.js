@@ -19,4 +19,11 @@ describe ('Player', ()=>
     player1.addScore();
     expect(player1.checkScore()).toEqual("You have less than 21 points");
   });
-})
+  test ('Should correctly test if a hit makes the user bust', () =>
+  {
+    var player1 = new Player(10,4);
+    player1.addScore();
+    player1.hitScore(9);
+    expect(player1.checkScore()).toEqual("You busted");
+  })
+});
