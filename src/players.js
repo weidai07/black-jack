@@ -12,13 +12,13 @@ export class Player
   }
   checkScore()
   {
-    if (this.score<21)
-    {
-      return "You have less than 21 points"
-    }
-    else if (this.score==21)
-      return "You have 21 points"
-    else
-      return "You busted"
+    // if (this.score<21)
+    // {
+    //   return "You have less than 21 points"
+    // }
+    // else if (this.score==21)
+    //   return "You have 21 points"
+    // else
+    //   return "You busted"
   }
 }
