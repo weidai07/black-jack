@@ -33,4 +33,11 @@ describe ('Player', ()=>
     player1.hitScore(10);
     expect(player1.checkScore()).toEqual("You have 21 points");
   });
+  test ('Should correctly test if the score of the user is under 21 after a hit', () =>
+  {
+    let player1 = new Player (4,6);
+    player1.addScore();
+    player1.hitScore(9);
+    expect (player1.checkScore()).toEqual();
+  })
 });
