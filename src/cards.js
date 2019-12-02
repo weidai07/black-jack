@@ -2,6 +2,7 @@ export class Cards {
 
     constructor(){
         this.id = '';
+        this.remaining = 0;
     }
 
     async makeDecks(numDecks){
@@ -10,6 +11,7 @@ export class Cards {
             let response = await fetch(`https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=${decks}`);
             let jsonifiedResponse = await response.json();
             this.id = jsonifiedResponse.deck_id;
+            this.remaining = jsonifiedResponse.remaining;
             console.log(this.id);
             return jsonifiedResponse;
         } catch (error) {
@@ -21,9 +23,10 @@ export class Cards {
         try {
             let response = await fetch(`https://deckofcardsapi.com/api/deck/${id}/draw/?count=1`);
             let jsonResponse = await response.json();
+            this.remaining = jsonResponse.remaining;
             return jsonResponse;
         } catch (error) {
-            return "super heck"
+            return "super heck";
         }
     }
 
@@ -31,19 +34,18 @@ export class Cards {
         return response.remaining;
     }
 
-    getDeck_id(response){
-        return response.deck_id;
+    getDeck_id(){
+        return this.id;
     }
 
-    getValue(response, pointer){
-        console.log(response.remaining);
-        if (isNaN(response.cards[pointer].value)){
-            if (response.cards[pointer].value === "ACE"){
-                return 11 + "\n " + response.remaining;
+    getValue(response){
+        if (isNaN(response.cards[0].value)){
+            if (response.cards[0].value === "ACE"){
+                return 11;
             } else {
-                return response.cards[pointer].value + " 10";
+                return response.cards[0].value + " 10";
             }
         }
-        return response.cards[pointer].value + "\n" + response.remaining + " cards remaining";
+        return response.cards[0].value;
     }
 }

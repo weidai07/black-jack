@@ -1,3 +1,6 @@
+
+//none of this works and i have no idea why
+
 import {Cards} from './../src/cards.js';
 
 describe('Cards', () => {
