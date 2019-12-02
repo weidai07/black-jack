@@ -1,24 +1,16 @@
-# Webpack Template
-##### By Wei Dai
-###### Created November 14, 2019
+# Black Jack
+##### By Wei Dai, Jacob Ash, Andrew Bates, and Jamila Aliyeva(sp?) 
+###### Created 02 December, 2019
 
 ## Description
 
-_This is a template for future use in individual projects._
+_This is the final result of our group project._
 
 ## Links:
 
-Github - https://github.com/weidai07/webpack-template
+Github - https://github.com/weidai07/black-jack
 
 ## Setup/Installation Requirements:
-
-1. Open https://weidai07.github.io/webpack-template
-2. Clone repository to local machine (or use as template to open new repo)
-3. Optional: Update title in webpack.config.js
-4. Optional: Update name of project in package in package.json
-5. Optional: Add author info, etc...
-6. TESTING: Add file(s) in __tests__ (Example: file-name.test.js) and import
-7. $ npm install  (in the command line interface) to install
 
   - $ npm run build -when you are ready to build project
   - $ npm run test -for testing with (Jest)
@@ -40,4 +32,10 @@ Github - https://github.com/weidai07/webpack-template
 
 ### License:
 
-Copyright (c) 2019 **Wei Dai**
+Copyright (c) 2019 Wei Dai
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

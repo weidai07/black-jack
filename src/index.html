@@ -1,29 +1,89 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title></title>
+    <title>Black Jack</title>
   </head>
   <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Black Jack</h1>
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="card">
+            <div class="card-body">
+              <form id="userForm">
+                <h5 class="card-title">Register User:</h5>
+                <br>
+                <label for="name">Enter User Name Here:</label>
+                <input type="text" id="userName">
+                <br>
+                <label for="deal">Dealer</label>
+                <input type="button" id="hit" value="Card Value">
+                <br>
+                <button type="submit" name="button" class="btn btn-dark btn-sm">Hit Me!</button>
+                <button type="submit" name="button" class="btn btn-dark btn-sm">Stand</button>
+                <button type="submit" name="button" class="btn btn-dark btn-sm">Split</button>
+                <button type="submit" name="button" class="btn btn-dark btn-sm">Insurance</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="col-lg-6">
+          <div class="card">
+            <div class="card">
+              <div class="card-body">
+                <form id="cpuForm">
+                  <h5 class="card-title">Dealer</h5>
+                  <br>
+                  <label for="name">CPU</label>
+                  <br>
+                  <label for="deal">Dealer</label>
+                  <input type="button" id="hit" value="Card Value">
+                  <br>
+                  <button type="submit" name="button" class="btn btn-dark btn-sm">Hit Me!</button>
+                  <button type="submit" name="button" class="btn btn-dark btn-sm">Stand</button>
+                  <button type="submit" name="button" class="btn btn-dark btn-sm">Split</button>
+                  <button type="submit" name="button" class="btn btn-dark btn-sm">Insurance</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Select Bet Amount:</h5>
 
-<!--
-
-  1.) Update title in webpack.config.js
-
-  2.) Update name in package in package.json
-
-  3.) OPTIONAL: Add author, etc...
-
-  REMEMBER:
-
-    initialize new git repo
-    npm install
-    npm run test
-    npm run build
-    npm start live
-
--->
-
-
-
+                <select class="betAmount" id="bets">
+                  <option value="">Select Amount in USD</option>
+                  <option value="bet">$1.00</option>
+                  <option value="bet">$5.00</option>
+                  <option value="bet">$10.00</option>
+                  <option value="bet">$15.00</option>
+                  <option value="bet">$20.00</option>
+                  <option value="bet"value="bet">$25.00</option>
+                  <option value="bet"value="bet">$100.00</option>
+                  <option value="bet">$1,000.00</option>
+                  <option value="bet">$10,000.00</option>
+                  <option value="bet">$100,000.00</option>
+                  <option value="bet">$1,000,000.00</option>
+                  <option value="bet">$5,000,000.00</option>
+                  <option value="bet">Custom</option>
+                </select>
+                <br>
+                  <h5 class="card-title">Total Bet Amount:</h5>  
+                    <h6>$ <input type="number" id="betAmt"></h6>
+                <p>Each player starts with two cards, one of the dealer's cards is hidden until the end. To 'Hit' is to ask for another card. To 'Stand' is to hold your total and end your turn. If you go over 21 you bust, and the dealer wins regardless of the dealer's hand.</p>                  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
   </body>
 </html>
