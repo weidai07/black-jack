@@ -6,13 +6,26 @@ export class Player
     this.card2 = card2,
     this.score = 0,
     this.cards = [],
-    this.haveAce = false
+    this.cardsSplit = [],
+    this.split = false
   }
   addScore()
   {
     this.cards.push(this.card1);
     this.cards.push(this.card2);
     return this.score = this.card1 +this.card2;
+  }
+  split(choice)
+  {
+    if (this.card1==this.card2)
+    {
+      this.split == true;
+    }
+    if (choice==true && this.split == true)
+    {
+      this.cardsSplit.push(this.card2);
+      this.cards.pop();
+    }
   }
   hitScore(hit)
   {
