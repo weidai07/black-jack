@@ -38,6 +38,6 @@ describe ('Player', ()=>
     let player1 = new Player (4,6);
     player1.addScore();
     player1.hitScore(9);
-    expect (player1.checkScore()).toEqual();
+    expect (player1.checkScore()).toEqual("You have less than 21 points");
   })
 });
