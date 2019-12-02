@@ -4,15 +4,33 @@ export class Player
   {
     this.card1 = card1,
     this.card2 = card2,
-    this.score = 0
+    this.score = 0,
+    this.cards = [],
+    this.haveAce = false
   }
   addScore()
   {
+    this.cards.push(this.card1);
+    this.cards.push(this.card2);
     return this.score = this.card1 +this.card2;
   }
   hitScore(hit)
   {
-   return this.score += hit;
+    this.score = this.score - this.card1 - this.card2;
+    this.cards.push(hit);
+    for (let i = 0; i<this.cards.length;i++)
+    {
+      this.score+= this.cards[i];
+      for (let j = 0; j<this.cards.length;j++)
+      {
+        if (this.score>21 && this.cards[j]==11)
+        {
+          this.cards[j] == 1;
+          this.score -= 10;
+        }
+      }
+    }
+    return this.score;
   }
   checkScore()
   {
