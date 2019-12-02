@@ -31,6 +31,6 @@ describe ('Player', ()=>
     let player1 = new Player(6,5);
     player1.addScore();
     player1.hitScore(10);
-    expect(player1.checkScore()).toEqual();
+    expect(player1.checkScore()).toEqual("You have 21 points");
   });
 });
