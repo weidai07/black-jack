@@ -49,4 +49,4 @@ export class Cards {
         return response.cards[0].value;
     }
 }
-                   
+                    

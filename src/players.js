@@ -8,7 +8,8 @@ export class Player
     this.cards = [],
     this.cardsSplit = [],
     this.dealerActive = dealerActive,
-    this.split = false
+    this.choices = 0,
+    this.splitCheck = false
   }
   addScore()
   {
@@ -18,16 +19,16 @@ export class Player
   }
   split(choice)
   {
+    this.choices = 1;
     if (this.card1==this.card2)
     {
-      this.split == true;
+      this.splitCheck = true;
     }
-    if (choice==true && this.split == true)
+    if (this.choices==1&& this.splitCheck)
     {
       this.cardsSplit.push(this.card2);
       this.cards.pop();
-      // this.nextCard();
-
+      return this.cardsSplit;
     }
   }
   hitScore(hit)
