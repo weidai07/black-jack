@@ -65,7 +65,7 @@ describe ('Player', ()=>
     console.log("Split Check: "+player1.splitCheck + "Choice: "+ player1.choice);
     expect(player1.cardsSplit).toEqual([8]);
   });
-  test('Should correctly add and subtract bet amount', () => 
+  test('Should correctly subtract bet amount', () => 
   {
     let player1 = new Bet (50);
     let userPlayer = new Player (8, 6, false);
@@ -75,5 +75,26 @@ describe ('Player', ()=>
     player1.checkBet(userPlayer.score,dealer.score);
     expect(player1.playerTotal).toEqual(50);
   });
+  test('Should correctly add bet amount', () => 
+  {
+    let player1 = new Bet (50);
+    let userPlayer = new Player (9, 7, false);
+    let dealer = new Player (9,6,true);
+    userPlayer.addScore();
+    dealer.addScore();
+    player1.checkBet(userPlayer.score,dealer.score);
+    expect(player1.playerTotal).toEqual(150);
+  });
+  test('Should correctly split the pot', () => 
+  {
+    let player1 = new Bet (50);
+    let userPlayer = new Player (9, 6, false);
+    let dealer = new Player (9,6,true);
+    userPlayer.addScore();
+    dealer.addScore();
+    player1.checkBet(userPlayer.score,dealer.score);
+    expect(player1.playerTotal).toEqual(100);
+  });
+
 });
 
