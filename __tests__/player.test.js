@@ -58,13 +58,6 @@ describe ('Player', ()=>
     console.log(player2.score);
     expect(player2.checkScore()).toEqual( "You have less than 21 points");
   });
-  test('Should correctly split when two of the cards are the same',()  => 
-  {
-    let player1 = new Player (8,8, false);
-    player1.split(1);
-    console.log("Split Check: "+player1.splitCheck + "Choice: "+ player1.choice);
-    expect(player1.cardsSplit).toEqual([8]);
-  });
   test('Should correctly subtract bet amount', () => 
   {
     let player1 = new Bet (50);
@@ -95,6 +88,14 @@ describe ('Player', ()=>
     player1.checkBet(userPlayer.score,dealer.score);
     expect(player1.playerTotal).toEqual(100);
   });
-
+  test.only('Should correctly split when two of the cards are the same',()  => 
+  {
+    let player1 = new Player (8,8, false);
+    player1.addScore();
+    player1.split(1);
+    console.log("Split Check: "+player1.splitCheck + "Choice: "+ player1.choice);
+    player1.hitScoreDoubles(6);
+    expect(player1.cardsSplit).toEqual([8,6]);
+  });
 });
 

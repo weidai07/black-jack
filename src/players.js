@@ -5,6 +5,7 @@ export class Player
     this.card1 = card1,
     this.card2 = card2,
     this.score = 0,
+    this.score2 = 0,
     this.cards = [],
     this.cardsSplit = [],
     this.dealerActive = dealerActive,
@@ -44,6 +45,24 @@ export class Player
         {
           this.cards[j] == 1;
           this.score -= 10;
+        }
+      }
+    }
+    return this.score;
+  }
+  hitScoreDoubles(hit)
+  {
+    this.score2 = 0;
+    this.cardsSplit.push(hit);
+    for (let i = 0; i<this.cardsSplit.length;i++)
+    {
+      this.score2+= this.cards[i];
+      for (let j = 0; j<this.cardsSplit.length;j++)
+      {
+        if (this.score2>21 && this.cardsSplit[j]==11)
+        {
+          this.cardsSplit[j] == 1;
+          this.score2 -= 10;
         }
       }
     }
