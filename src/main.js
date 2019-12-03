@@ -8,16 +8,24 @@ import {Cards} from './cards.js';
 
 
 $(document).ready(function() {
+    let player1;
+    $("#start").click(function(){
+        (async () => {
+            let cards = new Cards();
+            let x = await cards.makeDecks(1);
+            const id = cards.getDeck_id(x);
+            let currentCard = await cards.nextCard(id);
+        $("#hit").click(player1.hitScore(currentCard)); // current card is var form async
+        $("#start").click()
+        player1 = new Player(10,3, false);
+        player1.hitScore();
 
+   
     //this is to test all the api calls and methods, because i cant seem to test them with jest
 
-    (async () => {
-        let cards = new Cards();
-        let x = await cards.makeDecks(1);
-        const id = cards.getDeck_id(x);
-        let currentCard = await cards.nextCard(id);
-        let player = new Player (6,7,false);
-        console.log(player);
+    
+        // let player = new Player (6,10,false);
+        // console.log(player);
         
 
         console.log(cards.getRemaining(x));
@@ -26,4 +34,5 @@ $(document).ready(function() {
         // currentCard = await cards.nextCard(id);
         console.log(cards.getValue(currentCard));
     })();
+});
 });
