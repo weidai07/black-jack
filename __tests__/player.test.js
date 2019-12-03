@@ -3,51 +3,58 @@ describe ('Player', ()=>
 {
   test ('Should correctly test if the score of the user is over 21', ()=>
   {
-    let player1 = new Player (12,12);
+    let player1 = new Player (12,12,false);
     player1.addScore();
     expect(player1.checkScore()).toEqual("You busted");
   });
   test ('Should correctly test if the score of the user is 21', ()=>
   {
-    let player1 = new Player (11,10);
+    let player1 = new Player (11,10,false);
     player1.addScore();
-    console.log(player1.score);
     expect(player1.checkScore()).toEqual("You have 21 points");
   });
   test ('Should correctly test if the score of the user is under 21', ()=>
   {
-    let player1 = new Player(10,9);
+    let player1 = new Player(10,9,false);
     player1.addScore();
     expect(player1.checkScore()).toEqual("You have less than 21 points");
   });
   test ('Should correctly test if a hit makes the user bust', () =>
   {
-    let player1 = new Player(10,4);
+    let player1 = new Player(10,4,false);
     player1.addScore();
     player1.hitScore(9);
     expect(player1.checkScore()).toEqual("You busted");
   });
   test ('Should correctly test if a hit makes the user score equal 21', () =>
   {
-    let player1 = new Player(6,5);
+    let player1 = new Player(6,5,false);
     player1.addScore();
     player1.hitScore(10);
-      console.log(player1.score);
     expect(player1.checkScore()).toEqual("You have 21 points");
   });
   test ('Should correctly test if the score of the user is under 21 after a hit', () =>
   {
-    let player1 = new Player (4,6);
+    let player1 = new Player (4,6,false);
     player1.addScore();
     player1.hitScore(9);
-    console.log(player1.score);
     expect (player1.checkScore()).toEqual("You have less than 21 points");
   });
   test ('Should correctly test if the ace rounds down to a 1 if the user goes over 21',() =>
   {
-    let player1 = new Player (9,10);
+    let player1 = new Player (9,10,false);
     player1.addScore();
     player1.hitScore(11);
     expect (player1.checkScore()).toEqual("You have less than 21 points");
+  });
+  test ('Should correctly stand/hit for dealerAI',() => 
+  {
+    let player1 = new Player (10,8,true);
+    player1.bjDealer();
+    expect(player1.checkScore()).toEqual( "You have less than 21 points");
+    let player2 = new Player (10,3, true);
+    player2.bjDealer();
+    console.log(player2.score);
+    expect(player2.checkScore()).toEqual( "You have less than 21 points");
   })
 });

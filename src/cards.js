@@ -12,7 +12,7 @@ export class Cards {
             let jsonifiedResponse = await response.json();
             this.id = jsonifiedResponse.deck_id;
             this.remaining = jsonifiedResponse.remaining;
-            console.log(this.id);
+
             return jsonifiedResponse;
         } catch (error) {
             return "heck";
@@ -43,9 +43,10 @@ export class Cards {
             if (response.cards[0].value === "ACE"){
                 return 11;
             } else {
-                return response.cards[0].value + " 10";
+                return 10;
             }
         }
         return response.cards[0].value;
     }
 }
+                   

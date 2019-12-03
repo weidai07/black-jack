@@ -1,12 +1,13 @@
 export class Player
 {
-  constructor (card1, card2)
+  constructor (card1, card2, dealerActive)
   {
     this.card1 = card1,
     this.card2 = card2,
     this.score = 0,
     this.cards = [],
     this.cardsSplit = [],
+    this.dealerActive = dealerActive,
     this.split = false
   }
   addScore()
@@ -25,11 +26,13 @@ export class Player
     {
       this.cardsSplit.push(this.card2);
       this.cards.pop();
+      // this.nextCard();
+
     }
   }
   hitScore(hit)
   {
-    this.score = this.score - this.card1 - this.card2;
+    this.score = 0;
     this.cards.push(hit);
     for (let i = 0; i<this.cards.length;i++)
     {
@@ -55,5 +58,13 @@ export class Player
       return "You have 21 points"
     else
       return "You busted"
+  }
+  //make sure to change hitScore(2) to the card value that is picked up
+  bjDealer() {
+    this.addScore();
+       while(this.score<17){
+        this.hitScore(2);
+      } 
+    return this.score;
   }
 }
