@@ -19,13 +19,13 @@
                 <label for="name">Enter User Name Here:</label>
                 <input type="text" id="userName">
                 <br>
-                <label for="deal">Dealer</label>
+                <label for="deal">Player</label>
                 <input type="button" id="hit" value="Card Value">
                 <br>
                 <button type="submit" name="button" class="btn btn-dark btn-sm">Hit</button>
                 <button type="submit" name="button" class="btn btn-dark btn-sm">Stand</button>
-                <button type="submit" name="button" class="btn btn-dark btn-sm">Split</button>
-                <button type="submit" name="button" class="btn btn-dark btn-sm">Insurance</button>
+                <button type="submit" name="button" class="btn btn-dark btn-sm" id="split">Split</button>
+                <button type="submit" name="button" class="btn btn-dark btn-sm" id="insurance">Insurance</button>
               </form>
             </div>
           </div>
@@ -67,8 +67,8 @@
                   <option value="bet">$10.00</option>
                   <option value="bet">$15.00</option>
                   <option value="bet">$20.00</option>
-                  <option value="bet"value="bet">$25.00</option>
-                  <option value="bet"value="bet">$100.00</option>
+                  <option value="bet">$25.00</option>
+                  <option value="bet">$100.00</option>
                   <option value="bet">$1,000.00</option>
                   <option value="bet">$10,000.00</option>
                   <option value="bet">$100,000.00</option>
@@ -79,7 +79,9 @@
                 <br>
                   <h5 class="card-title">Total Bet Amount:</h5>  
                     <h6>$ <input type="number" id="betAmt"></h6>
-                <p>Each player starts with two cards, one of the dealer's cards is hidden until the end. To 'Hit' is to ask for another card. To 'Stand' is to hold your total and end your turn. If you go over 21 you bust, and the dealer wins regardless of the dealer's hand.</p>                  
+                <p>Each player starts with two cards, one of the dealer's cards is hidden until the end. To 'Hit' is to ask for another card. To 'Stand' is to hold your total and end your turn. If you go over 21 you bust, and the dealer wins regardless of the dealer's hand.</p>    
+                
+                <p>Disclaimer: The betting amount on this website uses fake money. No payouts will be awarded so there will be no "cash outs." This game is free to play for everyone strictly for fun.</p>
             </div>
           </div>
         </div>

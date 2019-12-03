@@ -4,11 +4,13 @@ body, .jumbotron, .row, .card, .card-body {
 
 body {
     background-image: url("https://torchbrothers.com/wp-content/uploads/2013/06/high-limit-blackjack-vegas.jpg"); 
+    background-repeat: no-repeat center center fixed;
+    background-size: cover;
 }
 
 .jumbotron {
     background-image: url("https://fiestarancho.sclv.com/~/media/Images/Page-Background-Images/Fiesta-Henderson/FH_Gaming_Main-new.jpg?h=630&la=en&w=1080"); 
-    background-repeat: no-repeat;
+    background-repeat: no-repeat center center fixed;
 }
 
 h1 {
@@ -20,4 +22,3 @@ h1 {
     margin-bottom: 50px;
   }
 
-  
