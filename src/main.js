@@ -10,23 +10,21 @@ import {Cards} from './cards.js';
 $(document).ready(function() {
     let player1;
     $("#start").click(function(){
+          player1 = new Player(10,3, false);
         (async () => {
             let cards = new Cards();
             let x = await cards.makeDecks(1);
             const id = cards.getDeck_id(x);
             let currentCard = await cards.nextCard(id);
-        $("#hit").click(player1.hitScore(currentCard)); // current card is var form async
-        $("#start").click()
-        player1 = new Player(10,3, false);
-        player1.hitScore();
+            console.log(currentCard);
+            
+            // $("#hit").click(player1.hitScore(currentCard.cards[0].value)); // current card is var form async
 
-   
+
     //this is to test all the api calls and methods, because i cant seem to test them with jest
 
     
-        // let player = new Player (6,10,false);
-        // console.log(player);
-        
+        //Makes a new deck every time we click hit
 
         console.log(cards.getRemaining(x));
         console.log(cards.getDeck_id(x));
@@ -34,5 +32,5 @@ $(document).ready(function() {
         // currentCard = await cards.nextCard(id);
         console.log(cards.getValue(currentCard));
     })();
-});
+    });
 });
