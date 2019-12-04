@@ -83,7 +83,7 @@ export class Player
     bjDealer() {
         this.addScore();
         while(this.score<17){
-            this.hitScore(2);
+            this.hitScore(2); //call from api
         } 
         return this.score;
     }
