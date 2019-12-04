@@ -18,7 +18,7 @@ export class Player
         this.cards.push(this.card2);
         return this.score = this.card1 +this.card2;
     }
-    split(choice) //will need a button to allow user to make "split"
+    split() //will need a button to allow user to make "split" (choice) in param
     {
         this.choices = 1;
         if (this.card1==this.card2)

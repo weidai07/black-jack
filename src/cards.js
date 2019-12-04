@@ -34,8 +34,9 @@ export class Cards {
         try {
             let response = await fetch(`https://deckofcardsapi.com/api/deck/${id}/draw/?count=1`);
             let jsonResponse = await response.json();
-            this.remaining = jsonResponse.cards[0].code;
-            console.log(this.remaining);
+            this.cardCode = jsonResponse.cards[0].code;
+            this.cardValue = jsonResponse.cards[0].value;
+            console.log(this.cardCode);
             return jsonResponse;
         } catch (error) {
             return "super heck";
