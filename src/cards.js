@@ -2,11 +2,9 @@ export class Cards {
 
     constructor(){
         this.id = '';
-        this.remaining = 0;
     }
 
-    async makeDecks(numDecks){
-        let decks = numDecks;
+    async makeDecks(decks){
         try {
             let response = await fetch(`https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=${decks}`);
             let jsonifiedResponse = await response.json();
@@ -24,13 +22,11 @@ export class Cards {
             let jsonResponse = await response.json();
             this.cardCode = jsonResponse.cards[0].code;
             this.cardValue = jsonResponse.cards[0].value;
-            console.log(this.cardCode);
             return jsonResponse;
         } catch (error) {
             return "super heck";
         }
     }
-
 
     getRemaining(response) {
         return response.remaining;
@@ -48,7 +44,7 @@ export class Cards {
                 return 10;
             }
         }
-        return response.cards[0].value;
+        return parseInt(response.cards[0].value);
     }
 }
                     

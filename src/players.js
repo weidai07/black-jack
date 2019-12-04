@@ -48,6 +48,7 @@ export class Player
                 }
             }
         }
+        checkScore()
         return this.score;
     }
     hitScoreDoubles(hit)
