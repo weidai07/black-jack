@@ -11,14 +11,16 @@ import {Cards} from './cards.js';
 let cards = new Cards();
 let player1 = new Player(10,3, false);
 $(document).ready(function() {
+    $("#start").click(function(){
+        $("#start").hide();
     (async () => {
-        let newDeck = await cards.makeDecks(1);
+        let newDeck = await cards.makeDecks();
         const id = cards.getDeck_id(newDeck);
         console.log(id);
         console.log(newDeck);
         console.log(player1);
 
-        $("#start").click(function(){    
+        $("#hit").click(function(){    
         (async () => {
             let response = await cards.nextCard(id);
             console.log(cards.getValue(response));
@@ -27,7 +29,5 @@ $(document).ready(function() {
           })();
         });
     })();  
+})
 });
- 
-       
-         
