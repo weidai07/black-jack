@@ -1,4 +1,4 @@
-# Black Jack
+# Blackjack
 ##### By Wei Dai, Jacob Ash, Andrew Bates, and Jamila Aliyeva
 ###### Created 02 December, 2019
 
@@ -12,10 +12,31 @@ Github - https://github.com/weidai07/black-jack
 
 ## Setup/Installation Requirements:
 
-  - $ npm run build -when you are ready to build project
-  - $ npm run test -for testing with (Jest)
-  - $ npm run start -for live server
+  - $ npm  install - to install npm
+  - $ npm run build - when you are ready to the build project
+  - $ npm run start - for starting live server
 
+## Specification
+
+This project creates a webpage that allows users to play the game Blackjack; a card game that is also globally known as Twenty-One (21). The point of this game is to get 21 points on the player's cards, without the dealer getting 21 points. To reach exactly 21 points is called hitting a 'Blackjack,' which is an instant win, as long as the dealer does not have 21 points exact. 
+
+In order to win this game, the player must reach a final score that is higher than the dealer's final score without exceeding 21 points or have the dealer draw additional cards until their points exceed 21. This game is implemented with the standard of using 6 decks of cards to prevent card counting strategies. In this context, we will be using only one deck of cards. 
+
+This game has implementations of three standard options for player after receiving the first two initial cards, which are as follows: Hit, Stand, and Split. The rules for each implementations are described in the following paragraphs:
+
+Hit: receive one additional card from dealer.
+
+Stand: stay as you are with your cards, no more additional cards from the dealer. 
+
+Split: split is only initiated when the player receives two cards with same number initially, the player can split the card into two hands instead of one. 
+
+A Blackjack instantly beats all hands that is not a blackjack. In the case of a tied score which is also known as 'push,' all of the bets on the table will be withdrawn to the original players. 
+
+Additional information for this game can be found in Wikipedia; https://en.wikipedia.org/wiki/Blackjack 
+
+## Known Bugs
+
+* _None at this time_
 
 ## Technologies Used:
 

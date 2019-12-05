@@ -9,7 +9,9 @@ import {Cards} from './cards.js';
 
 let cards = new Cards();
 let player1;
+let dealer; 
 let cardImg = [];
+let dealerImgs = [];
 $(document).ready(function() {
     (async () => {
         let newDeck = await cards.makeDecks(1);
@@ -21,8 +23,8 @@ $(document).ready(function() {
         cardImg.push(img1);
         cardImg.push(img2);
         document.getElementById('imgDisplay').src = img1;
-        let c1 = await cards.getValue(await cards.nextCard(id));
-        let c2 = await cards.getValue(await cards.nextCard(id));
+        let c1 = await cards.getValue(card1);
+        let c2 = await cards.getValue(card2);
         player1 = new Player(c1,c2, false);
         player1.addScore();
         console.log(c1);
@@ -32,6 +34,16 @@ $(document).ready(function() {
         console.log(id);
         console.log(newDeck);
         console.log(player1);
+        let dealerCard1 = await cards.nextCard();
+        let dealerCard2 = await cards.nextCard();
+        let dealerImg1 = await cards.getImage(dealerCard1);
+        let dealerImg2 = await cards.getImage(dealerCard2);
+        dealerImgs.push(dealerImg1);
+        dealerImgs.push(dealerImg2);
+        let dealerStart1 = await cards.getValue(dealerCard1);
+        let dealerStart2 = await cards.getValue(dealerCard2);
+        dealer = new Player(dealerStart1, dealerStart2, true);
+        dealer.addScore();
 
         $("#hit").click(function(){    
         (async () => {
