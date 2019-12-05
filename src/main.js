@@ -12,6 +12,7 @@ let player1;
 let dealer; 
 let cardImg = [];
 let dealerImgs = [];
+let turn = false;
 $(document).ready(function() {
     (async () => {
         let newDeck = await cards.makeDecks(1);
@@ -22,12 +23,8 @@ $(document).ready(function() {
         let img2 = await cards.getImage(card2);
         cardImg.push(img1);
         cardImg.push(img2);
-<<<<<<< HEAD
-        document.getElementById('imgDisplay').src = img1;
-=======
         $('#imgDisplay').append("<img src = '"+img1+"'>");
         $('#imgDisplay').append("<img src = '"+img2+"'>");
->>>>>>> master
         let c1 = await cards.getValue(card1);
         let c2 = await cards.getValue(card2);
         player1 = new Player(c1,c2, false);
@@ -58,7 +55,29 @@ $(document).ready(function() {
             $('#imgDisplay').append("<img src = '"+img3+"'>");
             player1.hitScore(cards.getValue(card3));
             if (player1.checkScore()=== "You busted" || player1.checkScore() === "You have 21 points"){
-                $("#hit").attr("disabled", true);
+                if (player.score === 21) {
+                    $("#hit").attr("disabled", true);
+                    turn = true;
+                    while(turn){
+                        setTimeout(function(){
+                            let dealCard = await cards.nextCard();
+                            let dealImg = await cards.getImage(dealCard);
+                            dealCard = await cards.getValue(dealCard);
+                            $("imgDisplayDealer").append("<img src = '"+dealImg+"'>");
+                            dealer.bjDealer(dealCard); 
+                            if (dealer.score >= 17){
+                                turn = false;
+                            }
+                        }, 1000);
+                    }
+                    if (dealer.score === 21) {
+                        //tell player that its a push(draw)
+                    } else {
+                        //tell player that they win
+                    }
+                } else {
+                    //tell player they lose and r dum
+                }
             }
             console.log(img3);
             console.log(player1.checkScore());
@@ -73,3 +92,27 @@ $(document).ready(function() {
  
        
          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//happy birthday Shawn

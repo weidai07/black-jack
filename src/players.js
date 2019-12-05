@@ -80,11 +80,10 @@ export class Player
         else
             return "You busted";
     }
-    //make sure to change hitScore(2) to the card value that is picked up
-    bjDealer() {
+    bjDealer(val) {
         this.addScore();
         while(this.score<17){
-            this.hitScore(2); //call from api
+            this.hitScore(val); 
         } 
         return this.score;
     }
