@@ -44,7 +44,7 @@ export class Player
             {
                 if (this.score>21 && this.cards[j]==11)
                 {
-                    this.cards[j] == 1;
+                    this.cards[j] = 1;
                     this.score -= 10;
                 }
             }
@@ -62,7 +62,7 @@ export class Player
             {
                 if (this.score2>21 && this.cardsSplit[j]==11)
                 {
-                    this.cardsSplit[j] == 1;
+                    this.cardsSplit[j] = 1;
                     this.score2 -= 10;
                 }
             }
@@ -81,8 +81,7 @@ export class Player
             return "You busted";
     }
     bjDealer(val) {
-        this.addScore();
-        while(this.score<17){
+        if(this.score<17){
             this.hitScore(val); 
         } 
         return this.score;
