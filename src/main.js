@@ -39,6 +39,12 @@ $(document).ready(function() {
             $("#split").attr("disabled",false);  
         }
         player1.addScore();
+        if (player1.score == 21) {
+            //blackjack
+            $("#hit").attr("disabled", true);
+            $("#stand").attr("disabled", true);
+            //$("").attr("disabled", false);
+        }
         console.log(c1);
         console.log(c2);
         console.log(img1);
@@ -67,32 +73,52 @@ $(document).ready(function() {
             player1.hitScore(cards.getValue(card3));
             if (player1.checkScore()=== "You busted" || player1.checkScore() === "You have 21 points"){
                 $("#hit").attr("disabled", true);
-                if (player1.splitCheck === true);
-                {
-                $("#hit").attr("disabled", false);
-                $("hit2").click(function(){
-                player1.hitScoreDouble();
-                });
-            }
-            }
-            $("#hitScoreDoubles").click(function(){    
-                (async () => {
-                    let card4 = await cards.nextCard();
-                    let img4 = await cards.getImage(card4);
-                    $('#imgDisplay').append("<img src = '"+img4+"'>");
-                    player1.hitScoreDoubles(cards.getValue(card4));
-                    if (player1.checkScore()=== "You busted" || player1.checkScore() === "You have 21 points"){  
-                        $("#hit2").show();
+                $("#stand").attr("disabled", true);
+                if (player1.score === 21) {
+                    while(dealer.score < 17){
+                        let dealCard = await cards.nextCard();
+                        let dealImg = await cards.getImage(dealCard);
+                        let dealCardVal = await cards.getValue(dealCard);
+                        $("imgDisplayDealer").append("<img src = '"+dealImg+"'>");
+                        dealer.bjDealer(dealCardVal); 
+                        console.log(dealer.score);
                     }
-                })();
-            });
-            console.log(img3);
-            console.log(player1.checkScore());
-            console.log(player1);
-            console.log(cards.getValue(card3));
-            console.log(card3.cards[0].value);
-            console.log(newDeck);
+                    if (dealer.score === 21) {
+                        //tell player that its a push(draw)
+                        //$("").attr("disabled", false);
+                    } else {
+                        //tell player that they win
+                        //$("").attr("disabled", false);
+                    }
+                } else {
+                    //tell player they lose
+                    //$("").attr("disabled", false);
+                }
+            }
           })();
+        });
+
+        $("#stand").click(function() {
+            (async () => {
+                $("#hit").attr("disabled", true);
+                $("#stand").attr("disabled", true);
+                if(dealer.score >= player1.score){
+                    //tell player they lost or pushed
+                } else if (dealer.score < 17){
+                    while(dealer.score < 17){
+                        let dealCard = await cards.nextCard();
+                        let dealImg = await cards.getImage(dealCard);
+                        let dealCardVal = await cards.getValue(dealCard);
+                        $("imgDisplayDealer").append("<img src = '"+dealImg+"'>");
+                        dealer.bjDealer(dealCardVal); 
+                        console.log(dealer.score);
+                    }
+                    if (dealer.score >= player1.score && dealer.score <= 21){
+                        //tell player the dealer wins.
+                        console.log("dealer wins");
+                    }
+                }
+            })();
         });
 
         $("#split").click(function(){
@@ -105,6 +131,33 @@ $(document).ready(function() {
 
             });
         });
-    })();
-  });
+
+    })();  
+    });
 });
+       
+         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//happy birthday Shawn
