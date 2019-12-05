@@ -22,12 +22,8 @@ $(document).ready(function() {
         let img2 = await cards.getImage(card2);
         cardImg.push(img1);
         cardImg.push(img2);
-<<<<<<< HEAD
-        document.getElementById('imgDisplay').src = img1;
-=======
         $('#imgDisplay').append("<img src = '"+img1+"'>");
         $('#imgDisplay').append("<img src = '"+img2+"'>");
->>>>>>> master
         let c1 = await cards.getValue(card1);
         let c2 = await cards.getValue(card2);
         player1 = new Player(c1,c2, false);
