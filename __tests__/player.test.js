@@ -88,7 +88,7 @@ describe ('Player', ()=>
     player1.checkBet(userPlayer.score,dealer.score);
     expect(player1.playerTotal).toEqual(100);
   });
-  test.only('Should correctly split when two of the cards are the same',()  => 
+  test('Should correctly split when two of the cards are the same',()  => 
   {
     let player1 = new Player (8,8, false);
     player1.addScore();

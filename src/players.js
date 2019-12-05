@@ -29,8 +29,12 @@ export class Player
         {
             this.cardsSplit.push(this.card2);
             this.cards.pop();
+            console.log(this.cards);
             return this.cardsSplit;
         }
+    }
+    cardsSplit(){
+        return this.cardsSplit;
     }
     hitScore(hit)
     {
@@ -44,7 +48,7 @@ export class Player
             {
                 if (this.score>21 && this.cards[j]==11)
                 {
-                    this.cards[j] == 1;
+                    this.cards[j] = 1;
                     this.score -= 10;
                 }
             }
@@ -62,7 +66,7 @@ export class Player
             {
                 if (this.score2>21 && this.cardsSplit[j]==11)
                 {
-                    this.cardsSplit[j] == 1;
+                    this.cardsSplit[j] = 1;
                     this.score2 -= 10;
                 }
             }

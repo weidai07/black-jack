@@ -46,6 +46,9 @@ export class Cards {
         }
         return parseInt(response.cards[0].value);
     }
+    checkValue(response){
+        return response.cards[0].value;
+    }
     getImage(response){
         return response.cards[0].image;
     }
