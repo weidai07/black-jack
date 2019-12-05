@@ -1,12 +1,12 @@
 export class Cards {
 
     constructor(){
-        this.id = '';
+        this.id = 'gbkzaq1dz3t7';
     }
 
-    async makeDecks(decks){
+    async makeDecks(){
         try {
-            let response = await fetch(`https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=${decks}`);
+            let response = await fetch(`https://deckofcardsapi.com/api/deck/gbkzaq1dz3t7/shuffle/?deck_count=1`);
             let jsonifiedResponse = await response.json();
             this.id = jsonifiedResponse.deck_id;
             this.remaining = jsonifiedResponse.remaining;
@@ -16,9 +16,9 @@ export class Cards {
         }
     }
 
-    async nextCard(id){
+    async nextCard(){
         try {
-            let response = await fetch(`https://deckofcardsapi.com/api/deck/${id}/draw/?count=1`);
+            let response = await fetch(`https://deckofcardsapi.com/api/deck/gbkzaq1dz3t7/draw/?count=1`);
             let jsonResponse = await response.json();
             this.cardCode = jsonResponse.cards[0].code;
             this.cardValue = jsonResponse.cards[0].value;
@@ -45,6 +45,9 @@ export class Cards {
             }
         }
         return parseInt(response.cards[0].value);
+    }
+    getImage(response){
+        return response.cards[0].image;
     }
 }
                     

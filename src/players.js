@@ -35,6 +35,7 @@ export class Player
     hitScore(hit)
     {
         this.score = 0;
+        this.hitCount = 1;
         this.cards.push(hit);
         for (let i = 0; i<this.cards.length;i++)
         {
@@ -48,7 +49,6 @@ export class Player
                 }
             }
         }
-        checkScore()
         return this.score;
     }
     hitScoreDoubles(hit)
