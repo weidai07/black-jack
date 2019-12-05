@@ -29,8 +29,12 @@ export class Player
         {
             this.cardsSplit.push(this.card2);
             this.cards.pop();
+            console.log(this.cards);
             return this.cardsSplit;
         }
+    }
+    cardsSplit(){
+        return this.cardsSplit;
     }
     hitScore(hit)
     {

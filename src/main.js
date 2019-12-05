@@ -13,6 +13,11 @@ let dealer;
 let cardImg = [];
 let dealerImgs = [];
 $(document).ready(function() {
+   $("#start").click(function(){
+    $("#split").attr("disabled",true);
+    $("#hit2").attr("disabled", true);  
+       $("#imgDisplay").text("");
+       
     (async () => {
         let newDeck = await cards.makeDecks(1);
         const id = cards.getDeck_id(newDeck);
@@ -26,7 +31,13 @@ $(document).ready(function() {
         $('#imgDisplay').append("<img src = '"+img2+"'>");
         let c1 = await cards.getValue(card1);
         let c2 = await cards.getValue(card2);
+        // let cCheck1 = await cards.checkValue(card1);
+        // let cCheck2 = await cards.checkValue(card2);
         player1 = new Player(c1,c2, false);
+        if (c1==c2)
+        {
+            $("#split").attr("disabled",false);  
+        }
         player1.addScore();
         if (player1.score == 21) {
             //blackjack
@@ -41,6 +52,7 @@ $(document).ready(function() {
         console.log(id);
         console.log(newDeck);
         console.log(player1);
+        $("#start").attr("disabled",true);  
         let dealerCard1 = await cards.nextCard();
         let dealerCard2 = await cards.nextCard();
         let dealerImg1 = await cards.getImage(dealerCard1);
@@ -109,9 +121,20 @@ $(document).ready(function() {
             })();
         });
 
+        $("#split").click(function(){
+            
+            player1.split();
+            $("#hit2").show();
+            $("#hit2").attr("disabled", false);
+            $("hit").click(function(){
+            player1.hitScoreDoubles();
+
+            });
+        });
+
     })();  
+    });
 });
- 
        
          
 
