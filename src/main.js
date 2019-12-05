@@ -22,7 +22,12 @@ $(document).ready(function() {
         let img2 = await cards.getImage(card2);
         cardImg.push(img1);
         cardImg.push(img2);
+<<<<<<< HEAD
         document.getElementById('imgDisplay').src = img1;
+=======
+        $('#imgDisplay').append("<img src = '"+img1+"'>");
+        $('#imgDisplay').append("<img src = '"+img2+"'>");
+>>>>>>> master
         let c1 = await cards.getValue(card1);
         let c2 = await cards.getValue(card2);
         player1 = new Player(c1,c2, false);
@@ -47,12 +52,19 @@ $(document).ready(function() {
 
         $("#hit").click(function(){    
         (async () => {
-            let response = await cards.nextCard(id);
-            player1.hitScore(cards.getValue(response));
+            $("#hit").attr("disabled", false);
+            let card3 = await cards.nextCard();
+            let img3 = await cards.getImage(card3);
+            $('#imgDisplay').append("<img src = '"+img3+"'>");
+            player1.hitScore(cards.getValue(card3));
+            if (player1.checkScore()=== "You busted" || player1.checkScore() === "You have 21 points"){
+                $("#hit").attr("disabled", true);
+            }
+            console.log(img3);
             console.log(player1.checkScore());
             console.log(player1);
-            console.log(cards.getValue(response));
-            console.log(response.cards[0].value);
+            console.log(cards.getValue(card3));
+            console.log(card3.cards[0].value);
             console.log(newDeck);
           })();
         });
