@@ -15,12 +15,14 @@
             <div class="card-body">
               <form id="userForm">
                 <br>
-                <label for="name">Enter User Name Here:</label>
-                <input type="text" id="userName">
+               <h2 class = "card-title">Player</h2>
                 <br>
-                <button type="button" name="button" class="btn btn-dark btn-sm" id="hit">Hit.</button>
+                <button type="button" name="button" class="btn btn-dark btn-sm" id="start">Start</button>
+                <button type="button" name="button" class="btn btn-dark btn-sm" id="hit">Hit</button>
                 <button type="button" name="button" class="btn btn-dark btn-sm" id="stand">Stand</button>
                 <button type="button" name="button" class="btn btn-dark btn-sm" id="split">Split</button>
+                <button type="button" name="button" class="btn btn-dark btn-sm" id="hit2">Hit Split Stack</button>
+
                 <div class="row">
                   <div class="col-lg-6">
                     <div class="card body">
@@ -38,12 +40,19 @@
             <div class="card">
               <div class="card-body">
                 <form id="cpuForm">
-                  <h5 class="card-title">Dealer</h5>
+                  <h2 class="card-title">Dealer</h2>
                   <br>
                   <label for="name">CPU</label>
                   <br>
                   <label for="deal">Dealer</label>
                   <input type="button" id="hit" value="Card Value">
+                  <div class="row">
+                      <div class="col-lg-6">
+                        <div class="card body">
+                          <div id="imgDisplayDealer"></div>
+                      </div>
+                    </div>
+                  </div>
                   <!-- <br>
                   <button type="button" name="button" class="btn btn-dark btn-sm">Hit</button>
                   <button type="button" name="button" class="btn btn-dark btn-sm">Stand</button>
@@ -56,7 +65,7 @@
         </div>
       </div>
       <br>
-      <div class="row"> 
+      <!-- <div class="row"> 
         <div class="col-lg-12">
           <div class="card">
             <div class="card-body">
@@ -87,7 +96,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
     </div>
   </body>
