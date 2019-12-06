@@ -6,28 +6,27 @@
   </head>
   <body>
     <div class="container">
-      <div class="jumbotron">
+      
         <h1>Epicodus Blackjack</h1>
-      </div>
       <div class="row">
-        <div class="col-lg-6">
-          <div class="card">
+        <div class="col-md-4">
+          <div class="card-card1">
             <div class="card-body">
-              <h5>Player</h5>
+
               <form id="userForm">
                 <br>
                <h2 class = "card-title">Player</h2>
                 <br>
-                <button type="button" name="button" class="btn btn-dark btn-sm" id="start">Start</button>
-                <button type="button" name="button" class="btn btn-dark btn-sm" id="hit">Hit</button>
-                <button type="button" name="button" class="btn btn-dark btn-sm" id="stand">Stand</button>
-                <button type="button" name="button" class="btn btn-dark btn-sm" id="split">Split</button>
-                <button type="button" name="button" class="btn btn-dark btn-sm" id="hit2">Hit Split Stack</button>
-
+                <button type="button" name="button" class="btn btn-dark btn-lg" id="start">Start</button>
+                <button type="button" name="button" class="btn btn-dark btn-lg" id="hit">Hit</button>
+                <button type="button" name="button" class="btn btn-dark btn-lg" id="stand">Stand</button>
+                <button type="button" name="button" class="btn btn-dark btn-lg" id="split">Split</button>
+                <button type="button" name="button" class="btn btn-dark btn-lg" id="hit2">Hit Split Stack</button>
                 <div class="row">
-                  <div class="col-lg-6">
-                    <div class="card body">
+                  <div class="col-lg-12">
+                    <div class="card-body">
                       <div id="imgDisplay"></div>
+                      <h2> <span class="betTotal"></span></h2>
                   </div>
                 </div>
               </div>
@@ -36,34 +35,30 @@
           </div>
         </div>
         <br>
-        <div class="col-lg-6">
-          <div class="card">
-            <div class="card">
+
+        <div class = "col-md-5">
+           <h2><span class = "results"></span></h2> 
+        </div>
+        <div class="col-md-3">
+            <div class="card-card2">
               <div class="card-body">
                 <form id="cpuForm">
                   <h2 class="card-title">Dealer</h2>
+                  <br><br><br><br>    
+                  <div class="card-body dealerCol">
+                    <div id="imgDisplayDealer"></div>
+                </div>
                   <br>
                   <h5>Rules:</h5>
                   <p>Each player starts with two cards, one of the dealer's cards is hidden until the end. To 'Hit' is to ask for another card. To 'Stand' is to hold your total and end your turn. If you go over 21 you bust, and the dealer wins regardless of the dealer's hand.</p>    
-                  <!-- 
-                  <button type="button" name="button" class="btn btn-dark btn-sm">Hit</button>
-                  <button type="button" name="button" class="btn btn-dark btn-sm">Stand</button>
-                  <button type="button" name="button" class="btn btn-dark btn-sm" id="split">Split</button>
-                  <button type="button" name="button" class="btn btn-dark btn-sm" id="insurance">Insurance</button> -->
                 </form>
               </div>
             </div>
-          </div>
         </div>
       </div>
       <br>
-      <!-- Betting is currently a work in progress -->
-      <!-- <div class="row"> 
-        <div class="col-lg-12">
-          <div class="card">
-            <div class="card-body">
+            <!-- <div class="card-body">
                 <h5 class="card-title">Select Bet Amount:</h5>
-
                 <select class="betAmount" id="bets">
                   <option value="">Select Amount in USD</option>
                   <option value="bet">$1.00</option>
@@ -73,23 +68,14 @@
                   <option value="bet">$20.00</option>
                   <option value="bet">$25.00</option>
                   <option value="bet">$100.00</option>
-                  <option value="bet">$1,000.00</option>
-                  <option value="bet">$10,000.00</option>
-                  <option value="bet">$100,000.00</option>
-                  <option value="bet">$1,000,000.00</option>
-                  <option value="bet">$5,000,000.00</option>
-                  <option value="bet">Custom</option>
                 </select>
                 <br>
                   <h5 class="card-title">Total Bet Amount:</h5>  
                     <h6>$ <input type="number" id="betAmt"></h6>
-                </div>
+                </div> -->
           </div>
         </div>
-      </div> -->
-               
-      <!-- <p>Disclaimer: The betting amount on this website uses fake money. No payouts will be awarded so there will be no "cash outs." This game is free to play for everyone strictly for fun.</p> -->
-            
+      </div>    
     </div>
     </div>
   </body>
