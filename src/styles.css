@@ -1,16 +1,51 @@
-body, .jumbotron, .row, .card, .card-body {
-    background: #71b072;
+body, .jumbotron, .row, .card-card1 .card-card2 .card-body {
+    background:none;
+    color: red;
+    font-family: 'Permanent Marker', sans-serif;
 } 
-
+.card-card1 {
+   float: left; 
+}
+.card-card2 {
+    float: right;
+}
+.results {
+    float: center;
+    background-color: black;
+    
+}
+.container{
+    max-width: 1920px;
+    width: 100%;
+}
+.button{
+    background-color: #f4511e;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+}
 body {
-    background-image: url("https://torchbrothers.com/wp-content/uploads/2013/06/high-limit-blackjack-vegas.jpg"); 
+    background-image: url("https://fiestarancho.sclv.com/~/media/Images/Page-Background-Images/Fiesta-Henderson/FH_Gaming_Main-new.jpg?h=630&la=en&w=1080"); 
     background-repeat: no-repeat center center fixed;
     background-size: cover;
 }
 
+#userForm{
+    background: none;
+}
+
 .jumbotron {
-    background-image: url("https://fiestarancho.sclv.com/~/media/Images/Page-Background-Images/Fiesta-Henderson/FH_Gaming_Main-new.jpg?h=630&la=en&w=1080"); 
-    background-repeat: no-repeat center center fixed;
+    background: none;
+    margin-top: 5px;
+    padding: none;
 }
 
 h1 {
@@ -23,6 +58,9 @@ h1 {
   }
   #hit2 {
       display: none;
+  }
+  .card-body {
+    background: none;   
   }
 
 /* #imgDisplay{
