@@ -4,21 +4,28 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 import {Player} from './players.js';
 import {Cards} from './cards.js';
+import {Bet} from './bet.js';
 
 
 
-let cards = new Cards();
 let player1;
 let dealer; 
 let cardImg = [];
 let dealerImgs = [];
+//let totalBet = 100;
+let bet = new Bet();
 $(document).ready(function() {
+    let cards = new Cards();
    $("#start").click(function(){
+    $(".results").text("");
+    $("#hit").attr("disabled", false);
+    $("#stand").attr("disabled", false);
+    
     $("#split").attr("disabled",true);
     $("#hit2").attr("disabled", true);  
        $("#imgDisplay").text("");
        $("#imgDisplayDealer").text("");
-       
+       $(".betTotal").text("Total $" + bet.playerTotal); 
     (async () => {
         let newDeck = await cards.makeDecks(1);
         const id = cards.getDeck_id(newDeck);
@@ -87,17 +94,20 @@ $(document).ready(function() {
                     }
                     if (dealer.score === 21) {
                         $(".card3").show();
-                        $(".results").text(" It's a Push! (draw) ")//tell player that its a push(draw)
+                        $(".results").text(" It's a Push! (draw) ");//tell player that its a push(draw)                 
                         $("#start").attr("disabled", false);
+                        bet.checkBet(player1.score,dealer.score,50);
                     } else {
                         $(".card3").show();
-                        $(".results").text(" You Win! ")
+                        $(".results").text(" You Win! ");
                         $("#start").attr("disabled", false);
+                        bet.checkBet(player1.score,dealer.score,50);
                     }
                 } else {
                     $(".card3").show();
-                    $(".results").text(" You Lose! ")
+                    $(".results").text(" You lose! ");
                     $("#start").attr("disabled", false);
+                    bet.checkBet(player1.score,dealer.score,50);
                 }
             }
           })();
@@ -105,11 +115,14 @@ $(document).ready(function() {
 
         $("#stand").click(function() {
             (async () => {
+                $('#imgDisplayDealer').append("<img src = '"+dealerImg2+"'>");
                 $("#hit").attr("disabled", true);
                 $("#stand").attr("disabled", true);
                 if(dealer.score >= player1.score){
-                    //tell player they lost or pushed
+                    $(".results").text(" You Lose! ");
+                    bet.checkBet(player1.score,dealer.score,50);
                 } else if (dealer.score < 17){
+
                     while(dealer.score < 17){
                         let dealCard = await cards.nextCard();
                         let dealImg = await cards.getImage(dealCard);
@@ -119,9 +132,15 @@ $(document).ready(function() {
                         console.log(dealer.score);
                     }
                     if (dealer.score >= player1.score && dealer.score <= 21){
-                        //tell player the dealer wins.
+                        $(".results").text("Dealer Wins!");
+                        bet.checkBet(player1.score,dealer.score,50);
                         console.log("dealer wins");
                     }
+                }
+                else
+                {
+                    $(".results").text(" You Win! ");
+                    bet.checkBet(player1.score,dealer.score,50);
                 }
             })();
         });
@@ -138,27 +157,5 @@ $(document).ready(function() {
 });
        
          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //happy birthday Shawn

@@ -9,6 +9,9 @@ body, .jumbotron, .row, .card-card1 .card-card2 .card-body {
 .card-card2 {
     float: right;
 }
+.dealerCol {
+    margin-top: 10px;
+}
 .results {
     float: center;
     background-color: black;
@@ -63,9 +66,6 @@ h1 {
     background: none;   
   }
 
-/* #imgDisplay{
-    border-radius: 8px;
+.betAmount{ 
+     background: none;
 }
-#imgDisplay2{
-    border-radius: 8px;
-} */
