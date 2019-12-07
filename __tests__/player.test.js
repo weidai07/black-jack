@@ -65,7 +65,7 @@ describe ('Player', ()=>
     let dealer = new Player (9,7,true);
     userPlayer.addScore();
     dealer.addScore();
-    player1.checkBet(userPlayer.score,dealer.score);
+    player1.checkBet(userPlayer.score,dealer.score,50);
     expect(player1.playerTotal).toEqual(50);
   });
   test('Should correctly add bet amount', () => 
@@ -75,7 +75,7 @@ describe ('Player', ()=>
     let dealer = new Player (9,6,true);
     userPlayer.addScore();
     dealer.addScore();
-    player1.checkBet(userPlayer.score,dealer.score);
+    player1.checkBet(userPlayer.score,dealer.score,50);
     expect(player1.playerTotal).toEqual(150);
   });
   test('Should correctly split the pot', () => 
@@ -85,7 +85,7 @@ describe ('Player', ()=>
     let dealer = new Player (9,6,true);
     userPlayer.addScore();
     dealer.addScore();
-    player1.checkBet(userPlayer.score,dealer.score);
+    player1.checkBet(userPlayer.score,dealer.score,50);
     expect(player1.playerTotal).toEqual(100);
   });
   test('Should correctly split when two of the cards are the same',()  => 

@@ -32,11 +32,12 @@ Split: split is only initiated when the player receives two cards with same numb
 
 A Blackjack instantly beats all hands that is not a blackjack. In the case of a tied score which is also known as 'push,' all of the bets on the table will be withdrawn to the original players. 
 
-Additional information for this game can be found in Wikipedia; https://en.wikipedia.org/wiki/Blackjack 
+Additional information for this game can be found on Wikipedia; https://en.wikipedia.org/wiki/Blackjack 
 
 ## Known Bugs
 
-* _None at this time_
+* _Dealer does not display final card in 2 places_
+* _Split is not functional at this current time_
 
 ## Technologies Used:
 
